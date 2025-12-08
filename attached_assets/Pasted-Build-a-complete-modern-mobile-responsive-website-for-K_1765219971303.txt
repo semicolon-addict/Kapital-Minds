@@ -1,0 +1,161 @@
+Build a complete, modern, mobile-responsive website for Kapital Mind LLC, a financial empowerment and business consulting company.
+Follow this exact structure, layout, and content:
+
+🔷 Website Pages
+
+Create the following pages:
+
+Home
+
+About
+
+Services
+
+Contact
+
+Use a clean, professional, modern design with good spacing, strong typography, and a confident tone.
+
+-------------------------------------------
+✅ HOME PAGE CONTENT
+-------------------------------------------
+Hero Section
+
+Headline:
+Unlock Your Financial Power. Build Confidence, Clarity, and Capital.
+
+Sub-Text:
+At Kapital Mind LLC, we help individuals and businesses transform their mindset, strengthen their credit, and create real opportunities for growth.
+
+Primary Button: Start Your Journey
+Secondary Button (optional): Contact Us
+
+Introduction Section
+
+Kapital Mind LLC was created to bridge the gap between ambition and achievement. We provide the guidance, tools, and strategies that help people think differently about money — and build a stronger financial future with confidence.
+Our focus: real guidance, real growth, real results.
+
+Services Highlight Section (cards)
+
+Include cards for:
+
+Business Development
+
+Financial Management
+
+Marketing
+
+Mergers & Acquisitions
+
+Strategic Management
+
+Each card should have a short description and a “Learn More” link to the Services page.
+
+Call to Action
+
+Ready to build the future you’ve been working toward?
+Button: Contact Us Today
+
+-------------------------------------------
+✅ ABOUT PAGE CONTENT
+-------------------------------------------
+Company Story
+
+Kapital Mind LLC was founded in 2025 with one purpose — to help people rethink what’s possible. What began as a small idea at a desk became a movement rooted in empowerment, education, and financial clarity.
+
+We saw countless ambitious people with the drive to succeed, but without access to the tools, knowledge, or capital needed to bring their ideas to life. Kapital Mind LLC was created to change that — to bridge the gap between potential and opportunity.
+
+Founder Introduction
+
+From the Founder — L. Frazier
+
+Kapital Mind LLC was built from experience — from knowing what it feels like to have the vision, the passion, and the ideas, but not the access to funding or financial knowledge. I started this business because I wanted to rewrite that story for others ready to break free from financial limits.
+
+True wealth doesn’t begin in your bank account — it begins in your mindset. That belief is the foundation of Kapital Mind LLC.
+
+Mission Statement
+
+Our mission is to educate, empower, and elevate.
+We help clients build strong credit, master financial strategy, and create long-term success through confidence, clarity, and smart decision-making.
+
+-------------------------------------------
+✅ SERVICES PAGE CONTENT
+-------------------------------------------
+Services Introduction
+
+We provide strategic guidance designed to support your growth — personally, professionally, and financially.
+
+Business Development
+
+Transform your idea into a structured, successful business.
+We guide you through formation, planning, scaling, and building a strong foundation for long-term growth.
+
+Financial Management
+
+Build and maintain strong credit, improve financial habits, and take control of your financial trajectory with expert guidance.
+
+Marketing
+
+Strengthen your brand presence and reach the audience your business deserves through effective marketing strategies.
+
+Mergers & Acquisitions
+
+Navigate business buying, selling, or merging with clear, strategic support to protect your vision and maximize opportunities.
+
+Strategic Management
+
+Achieve long-term success through structured planning, focused decision-making, and strategic business direction.
+
+CTA Section
+
+Your next level begins with the right strategy.
+Button: Contact Us
+
+-------------------------------------------
+✅ CONTACT PAGE CONTENT
+-------------------------------------------
+Header
+
+Get in Touch
+
+Contact Form Fields
+
+Name
+
+Email
+
+Message
+Button: Submit
+
+Direct Contact Info
+
+Email: (insert your email)
+Phone: (insert your phone number)
+
+Social Links
+
+Add icons for:
+
+Instagram
+
+Facebook
+
+LinkedIn
+
+-------------------------------------------
+✅ DESIGN REQUIREMENTS
+
+Clean, modern layout
+
+Mobile responsive
+
+SSL enabled
+
+Fast loading
+
+Simple navigation menu
+
+Professional fonts
+
+Financial/consulting style imagery
+
+Consistent brand colors (blues, golds, blacks, or neutrals)
