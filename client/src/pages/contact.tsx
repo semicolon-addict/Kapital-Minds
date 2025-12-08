@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { useToast } from "@/hooks/use-toast";
-import { Mail, Phone, MapPin, Instagram, Facebook, Linkedin } from "lucide-react";
+import { Mail, Phone, MapPin, Globe } from "lucide-react";
 
 const formSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters." }),
@@ -42,7 +42,7 @@ export default function Contact() {
         <div className="container mx-auto px-4 md:px-6 text-center">
           <h1 className="text-4xl md:text-5xl font-heading font-bold mb-4">Get in Touch</h1>
           <p className="text-lg text-primary-foreground/80 max-w-xl mx-auto">
-            Ready to start your journey? Contact us today to discuss how we can help you achieve your financial goals.
+            We’re here to help you build confidence, clarity, and capital. Reach out today.
           </p>
         </div>
       </section>
@@ -109,61 +109,55 @@ export default function Contact() {
             {/* Contact Info */}
             <div className="space-y-10 py-4">
               <div>
-                <h3 className="text-2xl font-bold text-primary mb-6">Contact Information</h3>
-                <div className="space-y-6">
+                <h3 className="text-2xl font-bold text-primary mb-2">Leroy Frazier</h3>
+                <p className="text-muted-foreground mb-8">Founder, Kapital Mind LLC</p>
+                
+                <div className="space-y-8">
                   <div className="flex items-start gap-4">
-                    <div className="bg-primary/5 p-3 rounded-lg">
-                      <Mail className="w-6 h-6 text-primary" />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-primary">Email</h4>
-                      <p className="text-muted-foreground">contact@kapitalmind.com</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-4">
-                    <div className="bg-primary/5 p-3 rounded-lg">
+                    <div className="bg-primary/5 p-3 rounded-lg shrink-0">
                       <Phone className="w-6 h-6 text-primary" />
                     </div>
                     <div>
                       <h4 className="font-semibold text-primary">Phone</h4>
-                      <p className="text-muted-foreground">(555) 123-4567</p>
+                      <p className="text-lg text-slate-700">(833) 350-5311</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start gap-4">
+                    <div className="bg-primary/5 p-3 rounded-lg shrink-0">
+                      <Mail className="w-6 h-6 text-primary" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-primary">Email</h4>
+                      <p className="text-lg text-slate-700">info@kapitalmind.org</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="bg-primary/5 p-3 rounded-lg shrink-0">
+                      <Globe className="w-6 h-6 text-primary" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-primary">Website</h4>
+                      <p className="text-lg text-slate-700">http://kapitalmind.org</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="bg-primary/5 p-3 rounded-lg shrink-0">
+                      <MapPin className="w-6 h-6 text-primary" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-primary">Address</h4>
+                      <p className="text-lg text-slate-700">
+                        632 N. 2nd St, Unit #1213<br />
+                        Philadelphia, PA 19123
+                      </p>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div>
-                <h3 className="text-2xl font-bold text-primary mb-6">Connect With Us</h3>
-                <div className="flex gap-4">
-                  <a href="#" className="bg-primary text-white p-4 rounded-full hover:bg-secondary hover:text-primary transition-colors shadow-lg">
-                    <Instagram className="w-6 h-6" />
-                  </a>
-                  <a href="#" className="bg-primary text-white p-4 rounded-full hover:bg-secondary hover:text-primary transition-colors shadow-lg">
-                    <Facebook className="w-6 h-6" />
-                  </a>
-                  <a href="#" className="bg-primary text-white p-4 rounded-full hover:bg-secondary hover:text-primary transition-colors shadow-lg">
-                    <Linkedin className="w-6 h-6" />
-                  </a>
-                </div>
-              </div>
-
-              <div className="bg-muted/30 p-8 rounded-2xl">
-                <h4 className="font-bold text-primary mb-2">Office Hours</h4>
-                <div className="space-y-2 text-muted-foreground">
-                  <div className="flex justify-between">
-                    <span>Monday - Friday</span>
-                    <span>9:00 AM - 5:00 PM</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span>Saturday</span>
-                    <span>By Appointment</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span>Sunday</span>
-                    <span>Closed</span>
-                  </div>
-                </div>
-              </div>
             </div>
 
           </div>
