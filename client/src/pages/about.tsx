@@ -47,12 +47,12 @@ export default function About() {
                 </p>
               </div>
             </motion.div>
-            <div className="relative h-[400px] bg-primary/5 rounded-2xl overflow-hidden shadow-xl">
-              <div className="absolute inset-0 bg-primary/10 mix-blend-multiply" />
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20" />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <span className="text-9xl font-heading font-bold text-primary/10">KM</span>
-              </div>
+            <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-xl">
+              <img 
+                src="/public/KPMock.png"  // <-- replace with your actual image path
+                alt="Kapital Mind Graphic"
+                className="w-full h-full object-cover" 
+              />
             </div>
           </div>
         </div>
@@ -65,7 +65,7 @@ export default function About() {
             <div className="order-2 md:order-1 relative">
               <div className="absolute -inset-4 bg-secondary/20 rounded-xl transform rotate-3" />
               <img 
-                src={founderImg} 
+                src="/public/founder.png"  // <-- replace with your actual image path
                 alt="Leroy Frazier, Founder" 
                 className="relative rounded-xl shadow-2xl w-full max-w-md mx-auto object-cover aspect-[3/4]"
               />

@@ -73,7 +73,7 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-extrabold tracking-tight mb-6 leading-tight">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-extrabold tracking-tight mb-6 leading-tight text-white">
               Building Wealth Starts in the <span className="text-secondary">Mind</span>.
             </h1>
             <p className="text-xl md:text-2xl text-gray-200 mb-10 max-w-4xl mx-auto leading-relaxed font-light">
@@ -227,21 +227,32 @@ export default function Home() {
       </section>
 
       {/* Call to Action */}
-      <section className="py-24 bg-slate-900 text-white text-center relative overflow-hidden">
-        <div className="container relative z-10 px-4">
-          <h2 className="text-3xl md:text-5xl font-heading font-bold mb-6">
-            Ready to take control of your financial future?
-          </h2>
-          <p className="text-xl text-slate-300 max-w-2xl mx-auto mb-10">
-            Let’s build the mindset, structure, and systems that lead to wealth.
-          </p>
-          <Link href="/contact">
-            <Button size="lg" className="bg-secondary hover:bg-secondary/90 text-primary font-bold text-lg px-10 h-16 shadow-lg shadow-secondary/20">
-              Contact Us Today
-            </Button>
-          </Link>
-        </div>
-      </section>
+      <section
+  style={{ backgroundImage: "url('/public/CTAimg.jpg')" }}
+  className="py-24 bg-slate-900 bg-cover bg-center bg-no-repeat text-white text-center relative overflow-hidden"
+>
+  <div className="container relative z-10 px-4">
+    <h2 className="text-3xl md:text-5xl font-heading font-bold mb-6 text-yellow-400">
+      Ready to take control of your <span className="text-white">Financial</span> future?
+    </h2>
+
+    <p className="text-xl text-slate-300 max-w-2xl mx-auto mb-10">
+      Let’s build the mindset, structure, and systems that lead to wealth.
+    </p>
+
+    <Link href="/contact">
+      <Button
+        size="lg"
+        className="bg-secondary hover:bg-secondary/90 text-primary font-bold text-lg px-10 h-16 shadow-lg shadow-secondary/20"
+      >
+        Contact Us Today
+      </Button>
+    </Link>
+  </div>
+
+  <div className="absolute inset-0 bg-black/50"></div>
+</section>
+
     </div>
   );
 }

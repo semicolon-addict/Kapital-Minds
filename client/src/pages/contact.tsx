@@ -76,7 +76,7 @@ export default function Contact() {
                       <FormItem>
                         <FormLabel>Email</FormLabel>
                         <FormControl>
-                          <Input placeholder="your.email@example.com" {...field} className="h-12" />
+                          <Input placeholder="your-email@gmail.com" {...field} className="h-12" />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
