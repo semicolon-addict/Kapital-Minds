@@ -49,7 +49,7 @@ export default function About() {
             </motion.div>
             <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-xl">
               <img 
-                src="/public/KPMock.png"  // <-- replace with your actual image path
+                src="/images/KPMock.PNG"  // <-- replace with your actual image path
                 alt="Kapital Mind Graphic"
                 className="w-full h-full object-cover" 
               />
@@ -65,7 +65,7 @@ export default function About() {
             <div className="order-2 md:order-1 relative">
               <div className="absolute -inset-4 bg-secondary/20 rounded-xl transform rotate-3" />
               <img 
-                src="/public/founder.png"  // <-- replace with your actual image path
+                src="/images/founder.png"  // <-- replace with your actual image path
                 alt="Leroy Frazier, Founder" 
                 className="relative rounded-xl shadow-2xl w-full max-w-md mx-auto object-cover aspect-[3/4]"
               />

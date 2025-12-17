@@ -228,7 +228,7 @@ export default function Home() {
 
       {/* Call to Action */}
       <section
-  style={{ backgroundImage: "url('/public/CTAimg.jpg')" }}
+  style={{ backgroundImage: "url('/images/CTAimg.jpg')" }}
   className="py-24 bg-slate-900 bg-cover bg-center bg-no-repeat text-white text-center relative overflow-hidden"
 >
   <div className="container relative z-10 px-4">
