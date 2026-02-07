@@ -17,6 +17,7 @@ import {
 
 import { useToast } from "@/hooks/use-toast";
 import emailjs from "@emailjs/browser";
+import { Mail, Phone, MapPin, Globe } from "lucide-react";
 
 /* ----------------------------- Schema ----------------------------- */
 
@@ -45,7 +46,6 @@ export default function Contact() {
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
     if (loading) return;
-
     setLoading(true);
 
     try {
@@ -68,7 +68,6 @@ export default function Contact() {
       form.reset();
     } catch (err) {
       console.error("EmailJS error:", err);
-
       toast({
         title: "Failed to send message",
         description: "Please try again later.",
@@ -119,11 +118,7 @@ export default function Contact() {
                       <FormItem>
                         <FormLabel>Name</FormLabel>
                         <FormControl>
-                          <Input
-                            {...field}
-                            placeholder="Your Name"
-                            className="h-12"
-                          />
+                          <Input {...field} placeholder="Your Name" className="h-12" />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -137,11 +132,7 @@ export default function Contact() {
                       <FormItem>
                         <FormLabel>Email</FormLabel>
                         <FormControl>
-                          <Input
-                            {...field}
-                            placeholder="your-email@gmail.com"
-                            className="h-12"
-                          />
+                          <Input {...field} placeholder="your-email@gmail.com" className="h-12" />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -177,11 +168,71 @@ export default function Contact() {
               </Form>
             </div>
 
-            {/* -------------------- Right Side -------------------- */}
-            {/* Keep your existing contact info JSX here */}
+            {/* -------------------- Contact Info -------------------- */}
+            <div className="space-y-8">
+              <div>
+                <h3 className="text-2xl font-bold text-primary mb-1">
+                  Leroy Frazier
+                </h3>
+                <p className="text-muted-foreground mb-6">
+                  Founder, Kapital Mind LLC
+                </p>
+
+                <div className="space-y-6">
+                  <InfoRow
+                    icon={<Phone className="h-5 w-5" />}
+                    title="Phone"
+                    value="(833) 350-5311"
+                  />
+
+                  <InfoRow
+                    icon={<Mail className="h-5 w-5" />}
+                    title="Email"
+                    value="info@kapitalmind.org"
+                  />
+
+                  <InfoRow
+                    icon={<Globe className="h-5 w-5" />}
+                    title="Website"
+                    value="https://kapitalmind.org"
+                  />
+
+                  <InfoRow
+                    icon={<MapPin className="h-5 w-5" />}
+                    title="Address"
+                    value={`632 N. 2nd St, Unit #1213\nPhiladelphia, PA 19123`}
+                  />
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
+    </div>
+  );
+}
+
+/* -------------------- Info Row Component -------------------- */
+
+function InfoRow({
+  icon,
+  title,
+  value,
+}: {
+  icon: React.ReactNode;
+  title: string;
+  value: string;
+}) {
+  return (
+    <div className="flex items-start gap-4">
+      <div className="bg-primary/10 p-3 rounded-lg text-primary">
+        {icon}
+      </div>
+      <div>
+        <h4 className="font-semibold text-primary">{title}</h4>
+        <p className="text-slate-700 whitespace-pre-line">{value}</p>
+      </div>
     </div>
   );
 }
