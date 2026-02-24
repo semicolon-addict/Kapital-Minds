@@ -16,15 +16,26 @@ import {
 } from "@/components/ui/form";
 
 import { useToast } from "@/hooks/use-toast";
-import emailjs from "@emailjs/browser";
 import { Mail, Phone, MapPin, Globe } from "lucide-react";
 
 /* ----------------------------- Schema ----------------------------- */
 
 const formSchema = z.object({
-  name: z.string().min(2, "Name must be at least 2 characters."),
-  email: z.string().email("Please enter a valid email address."),
-  message: z.string().min(10, "Message must be at least 10 characters."),
+  name: z
+    .string()
+    .min(2, "Name must be at least 2 characters.")
+    .max(100, "Name cannot exceed 100 characters."),
+  email: z
+    .string()
+    .email("Please enter a valid email address.")
+    .refine(
+      (val) => val.endsWith("@gmail.com"),
+      "Only @gmail.com email addresses are allowed."
+    ),
+  message: z
+    .string()
+    .min(10, "Message must be at least 10 characters.")
+    .max(500, "Message cannot exceed 500 characters."),
 });
 
 /* ---------------------------- Component ---------------------------- */
@@ -49,16 +60,19 @@ export default function Contact() {
     setLoading(true);
 
     try {
-      await emailjs.send(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-        {
-          from_name: values.name,
-          from_email: values.email,
+      const response = await fetch("https://script.google.com/macros/s/AKfycbwMaLxTBySjPdo-Q2lNT5Q8xxhCNcc1Ej-9PrgQkebc8rGRUZ7FE6_8apbST979WIQEVg/exec", {
+        method: "POST",
+        mode: "no-cors", // ← add this
+        body: new URLSearchParams({
+          name: values.name,
+          email: values.email,
           message: values.message,
-        },
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-      );
+        }),
+      });
+
+      // if (!response.ok) {
+      //   throw new Error("Submission failed");
+      // }
 
       toast({
         title: "Message sent successfully",
@@ -67,7 +81,7 @@ export default function Contact() {
 
       form.reset();
     } catch (err) {
-      console.error("EmailJS error:", err);
+      console.error("Submission error:", err);
       toast({
         title: "Failed to send message",
         description: "Please try again later.",
@@ -100,7 +114,7 @@ export default function Contact() {
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid md:grid-cols-2 gap-12 lg:gap-20">
 
-            {/* -------------------- Contact Form -------------------- */}
+            {/* Contact Form */}
             <div className="bg-white p-8 rounded-xl shadow-md border border-slate-100">
               <h2 className="text-2xl font-bold text-primary mb-6">
                 Send us a Message
@@ -118,7 +132,12 @@ export default function Contact() {
                       <FormItem>
                         <FormLabel>Name</FormLabel>
                         <FormControl>
-                          <Input {...field} placeholder="Your Name" className="h-12" />
+                          <Input
+                            {...field}
+                            maxLength={100}
+                            placeholder="Your Name"
+                            className="h-12"
+                          />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -132,7 +151,11 @@ export default function Contact() {
                       <FormItem>
                         <FormLabel>Email</FormLabel>
                         <FormControl>
-                          <Input {...field} placeholder="your-email@gmail.com" className="h-12" />
+                          <Input
+                            {...field}
+                            placeholder="your-email@gmail.com"
+                            className="h-12"
+                          />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -148,10 +171,14 @@ export default function Contact() {
                         <FormControl>
                           <Textarea
                             {...field}
+                            maxLength={500}
                             placeholder="How can we help you?"
                             className="min-h-[150px] resize-none"
                           />
                         </FormControl>
+                        <div className="text-xs text-muted-foreground text-right">
+                          {field.value?.length || 0}/500
+                        </div>
                         <FormMessage />
                       </FormItem>
                     )}
@@ -168,7 +195,7 @@ export default function Contact() {
               </Form>
             </div>
 
-            {/* -------------------- Contact Info -------------------- */}
+            {/* Contact Info */}
             <div className="space-y-8">
               <div>
                 <h3 className="text-2xl font-bold text-primary mb-1">
@@ -179,29 +206,10 @@ export default function Contact() {
                 </p>
 
                 <div className="space-y-6">
-                  <InfoRow
-                    icon={<Phone className="h-5 w-5" />}
-                    title="Phone"
-                    value="(833) 350-5311"
-                  />
-
-                  <InfoRow
-                    icon={<Mail className="h-5 w-5" />}
-                    title="Email"
-                    value="info@kapitalmind.org"
-                  />
-
-                  <InfoRow
-                    icon={<Globe className="h-5 w-5" />}
-                    title="Website"
-                    value="https://kapitalmind.org"
-                  />
-
-                  <InfoRow
-                    icon={<MapPin className="h-5 w-5" />}
-                    title="Address"
-                    value={`632 N. 2nd St, Unit #1213\nPhiladelphia, PA 19123`}
-                  />
+                  <InfoRow icon={<Phone className="h-5 w-5" />} title="Phone" value="(833) 350-5311" />
+                  <InfoRow icon={<Mail className="h-5 w-5" />} title="Email" value="info@kapitalmind.org" />
+                  <InfoRow icon={<Globe className="h-5 w-5" />} title="Website" value="https://kapitalmind.org" />
+                  <InfoRow icon={<MapPin className="h-5 w-5" />} title="Address" value={`632 N. 2nd St, Unit #1213\nPhiladelphia, PA 19123`} />
                 </div>
               </div>
             </div>
@@ -213,7 +221,7 @@ export default function Contact() {
   );
 }
 
-/* -------------------- Info Row Component -------------------- */
+/* Info Row */
 
 function InfoRow({
   icon,
